@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from configs import host, port
 
 # Import the necessary modules from transformers
 from transformers import pipeline
@@ -35,4 +36,4 @@ async def analyze_sentiment(model_name: str, text: str):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host=host, port=port)
